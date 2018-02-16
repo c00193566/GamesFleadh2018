@@ -1,0 +1,128 @@
+#include "InputSystem.h"
+
+InputSystem::InputSystem()
+{
+	up = down = left = right = false;
+	MouseX = 0;
+	MouseY = 0;
+}
+
+void InputSystem::KeyPressed(SDL_Event e, vector<unique_ptr<Entity>> const &entity)
+{
+	if (e.type == SDL_KEYDOWN)
+	{
+		for (int i = 0; i < entity.size(); i++)
+		{
+			auto& ent = entity.at(i);
+
+			if (ent->ID() == "player")
+			{
+				if (e.key.keysym.sym == ent->getComponent<KeyComponent>().Up())
+				{
+					up = true;
+				}
+
+				if (e.key.keysym.sym == ent->getComponent<KeyComponent>().Down())
+				{
+					down = true;
+				}
+
+				if (e.key.keysym.sym == ent->getComponent<KeyComponent>().Left())
+				{
+					left = true;
+				}
+
+				if (e.key.keysym.sym == ent->getComponent<KeyComponent>().Right())
+				{
+					right = true;
+				}
+			}
+		}
+	}
+}
+
+void InputSystem::KeyReleased(SDL_Event e, vector<unique_ptr<Entity>> const & entity)
+{
+	if (e.type == SDL_KEYUP)
+	{
+		for (int i = 0; i < entity.size(); i++)
+		{
+			auto& ent = entity.at(i);
+
+			if (ent->ID() == "player")
+			{
+				if (e.key.keysym.sym == ent->getComponent<KeyComponent>().Up())
+				{
+					up = false;
+				}
+
+				if (e.key.keysym.sym == ent->getComponent<KeyComponent>().Down())
+				{
+					down = false;
+				}
+
+				if (e.key.keysym.sym == ent->getComponent<KeyComponent>().Left())
+				{
+					left = false;
+				}
+
+				if (e.key.keysym.sym == ent->getComponent<KeyComponent>().Right())
+				{
+					right = false;
+				}
+			}
+		}
+	}
+}
+
+void InputSystem::MouseMove(SDL_Event e)
+{
+	if (e.type == SDL_MOUSEMOTION)
+	{
+		SDL_GetMouseState(&MouseX, &MouseY);
+	}
+}
+
+void InputSystem::Update(vector<unique_ptr<Entity>> const &entity)
+{
+	for (int i = 0; i < entity.size(); i++)
+	{
+		auto& ent = entity.at(i);
+
+		if (ent->ID() == "player")
+		{
+			// Commands for relative inputs
+			if (up)
+			{
+				ent->getComponent<CommandComponent>().getCommand("Up")->Execute(&ent->getComponent<TransformComponent>());
+			}
+
+			if (down)
+			{
+				ent->getComponent<CommandComponent>().getCommand("Down")->Execute(&ent->getComponent<TransformComponent>());
+			}
+
+			if (left)
+			{
+				ent->getComponent<CommandComponent>().getCommand("Left")->Execute(&ent->getComponent<TransformComponent>());
+			}
+
+			if (right)
+			{
+				ent->getComponent<CommandComponent>().getCommand("Right")->Execute(&ent->getComponent<TransformComponent>());
+			}
+
+			// Rotation
+			float rot = ent->getComponent<TransformComponent>().rotation;
+
+			Vector2f RotVec = Vector2f(MouseX - (ent->getComponent<TransformComponent>().position.x + ent->getComponent<TransformComponent>().width / 2),
+				MouseY - (ent->getComponent<TransformComponent>().position.y + ent->getComponent<TransformComponent>().height / 2));
+
+			rot = atan2f(RotVec.x, -RotVec.y);
+
+			rot = (rot * 180) / 3.14;
+
+			ent->getComponent<TransformComponent>().rotation = rot;
+		}
+	}
+}
