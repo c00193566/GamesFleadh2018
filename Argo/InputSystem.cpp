@@ -138,8 +138,14 @@ void InputSystem::Update(EntityManager * Manager, vector<Entity*> &entity, Playe
 		// Fire
 		if (fire)
 		{
-			ent->getComponent<CommandComponent>().getFireCommand()->Execute(&ent->getComponent<TransformComponent>(),
-				BulletFactory, m_asset->getTexture("RedBullet"), Manager);
+			if (ent->getComponent<WeaponComponent>().getFire())
+			{
+				ent->getComponent<CommandComponent>().getFireCommand()->Execute(&ent->getComponent<TransformComponent>(),
+					BulletFactory, m_asset->getTexture("RedBullet"), Manager);
+				ent->getComponent<WeaponComponent>().setFire(false);
+				ent->getComponent<WeaponComponent>().setTimer(0.0f);
+				ent->getComponent<WeaponComponent>().setClip(ent->getComponent<WeaponComponent>().getClip() - 1);
+			}
 		}
 	}
 }

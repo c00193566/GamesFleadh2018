@@ -9,6 +9,7 @@ void PlayerFactory::CreateEntity(EntityManager * EManager, SDL_Texture * Texture
 	player.addComponent<CommandComponent>();
 	player.addComponent<KeyComponent>(SDLK_w, SDLK_s, SDLK_a, SDLK_d);
 	player.addComponent<ColliderComponent>();
+	player.addComponent<WeaponComponent>(30, 0.2f, 1.0f);
 	player.addGroup(Groups::PlayerGroup);
 }
 
@@ -17,7 +18,11 @@ void PlayerFactory::CreateEntity(EntityManager * EManager, SDL_Texture * Texture
 void AIFactory::CreateEntity(EntityManager * EManager, SDL_Texture * Texture, float x, float y,
 	float w, float h)
 {
-
+	auto& AI = EManager->addEntity();
+	AI.addComponent<TransformComponent>(Vector2f(x, y), w, h, 0, 1, 1, 2);
+	AI.addComponent<SpriteComponent>(Texture, 43, 43);
+	AI.addComponent<ColliderComponent>();
+	AI.addGroup(Groups::EnemyGroup);
 }
 
 //////////////////////////////////////////////////////////////
@@ -30,6 +35,7 @@ void PlayerBulletFactory::CreateEntity(EntityManager * EManager, SDL_Texture * T
 	bullet.addComponent<SpriteComponent>(Texture, 27, 47);
 	bullet.addComponent<ColliderComponent>();
 	bullet.addGroup(Groups::PlayerBulletGroup);
+	bullet.addComponent<BulletComponent>(1.0f);
 	Vector2f set = Vector2f(sin((r / 180 * 3.14f)), -cos((r / 180 * 3.14f)));
 
 	set.Normalise();

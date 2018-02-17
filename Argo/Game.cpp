@@ -150,6 +150,7 @@ void Game::Init()
 	m_playerFactory = new PlayerFactory;
 	m_wallFactory = new WallFactory;
 	m_floorFactory = new FloorFactory;
+	m_aiFactory = new AIFactory;
 	m_pBulletFactory = new PlayerBulletFactory;
 
 	// Create Level
@@ -157,6 +158,9 @@ void Game::Init()
 
 	// Create player entity
 	m_playerFactory->CreateEntity(m_entManager, m_assets->getTexture("HM"), 80, 80);
+
+	// Create enemy entity
+	m_aiFactory->CreateEntity(m_entManager, m_assets->getTexture("Zombie"), 472, 664);
 }
 
 void Game::Run()

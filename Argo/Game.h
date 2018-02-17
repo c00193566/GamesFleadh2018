@@ -29,6 +29,7 @@ private:
 	Factory * m_playerFactory;
 	Factory * m_wallFactory;
 	Factory * m_floorFactory;
+	Factory * m_aiFactory;
 	PlayerBulletFactory * m_pBulletFactory;
 
 	bool m_running;

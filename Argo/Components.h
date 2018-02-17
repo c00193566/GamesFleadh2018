@@ -5,3 +5,5 @@
 #include "CommandComponent.h"
 #include "KeyComponent.h"
 #include "ColliderComponent.h"
+#include "WeaponComponent.h"
+#include "BulletComponent.h"

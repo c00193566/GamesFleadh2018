@@ -165,8 +165,10 @@
     <ClCompile Include="MovementSystem.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="Vector2D.cpp" />
+    <ClCompile Include="WeaponComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="BulletComponent.h" />
     <ClInclude Include="ColliderComponent.h" />
     <ClInclude Include="Collision.h" />
     <ClInclude Include="CommandComponent.h" />
@@ -186,6 +188,7 @@
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="WeaponComponent.h" />
   </ItemGroup>
   <ItemGroup>
     <None Include="GeneralGameData.json" />
