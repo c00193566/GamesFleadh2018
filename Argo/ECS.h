@@ -10,8 +10,10 @@ using namespace std;
 
 class Component;
 class Entity;
+class EntityManager;
 
 using ComponentID = size_t;
+using Group = size_t;
 
 inline ComponentID getComponentTypeID()
 {
@@ -26,6 +28,9 @@ template <typename T> inline ComponentID getComponentTypeID() noexcept
 }
 
 constexpr size_t maxComponents = 32;
+constexpr size_t maxGroups = 32;
+
+using GroupBitSet = bitset<maxGroups>;
 
 using ComponentBitSet = bitset<maxComponents>;
 using ComponentArray = array<Component*, maxComponents>;
@@ -42,12 +47,22 @@ public:
 
 class Entity
 {
-public:
-	Entity() {};
+private:
+	EntityManager & m_manager;
+	bool m_active;
+	vector<unique_ptr<Component>> m_components;
 
-	Entity(string tag)
+	ComponentArray m_componentArray;
+	ComponentBitSet m_componentBitSet;
+	GroupBitSet m_groupBitSet;
+
+	string m_tag;
+
+public:
+	Entity(EntityManager & Manager) :
+		m_manager(Manager)
 	{
-		m_tag = tag;
+		m_active = true;
 	};
 
 	virtual ~Entity() {};
@@ -69,6 +84,19 @@ public:
 	}
 
 	bool isActive() { return m_active; };
+	void setActive(bool set) { m_active = set; };
+
+	bool hasGroup(Group group)
+	{
+		return m_groupBitSet[group];
+	}
+
+	void addGroup(Group group);
+
+	void delGroup(Group group)
+	{
+		m_groupBitSet[group] = false;
+	}
 
 	/// <summary>
 	/// Adds a component with multiple arguments
@@ -113,17 +141,14 @@ public:
 	{
 		return m_tag;
 	};
-
-private:
-	bool m_active = true;
-	string m_tag;
-	vector<unique_ptr<Component>> m_components;
-	ComponentArray m_componentArray;
-	ComponentBitSet m_componentBitSet;
 };
 
 class EntityManager
 {
+private:
+	vector<unique_ptr<Entity>> m_entities;
+	array<vector<Entity*>, maxGroups> m_groupedEntites;
+
 public:
 	EntityManager()
 	{
@@ -148,6 +173,17 @@ public:
 
 	void Refresh()
 	{
+		for (auto i(0u); i < maxGroups; i++)
+		{
+			auto& v(m_groupedEntites[i]);
+
+			v.erase(std::remove_if(std::begin(v), std::end(v),[i](Entity* mEntity)
+			{
+				return !mEntity->isActive() || !mEntity->hasGroup(i);
+			}),
+				std::end(v));
+		}
+
 		m_entities.erase(std::remove_if(std::begin(m_entities), std::end(m_entities),
 			[](const std::unique_ptr<Entity> &mEntity)
 		{
@@ -156,9 +192,19 @@ public:
 			std::end(m_entities));
 	}
 
-	Entity& addEntity(string tag)
+	void addToGroup(Entity * ent, Group group)
 	{
-		Entity * e = new Entity(tag);
+		m_groupedEntites[group].emplace_back(ent);
+	}
+
+	vector<Entity*>& getGroup(Group group)
+	{
+		return m_groupedEntites[group];
+	}
+
+	Entity& addEntity()
+	{
+		Entity * e = new Entity(*this);
 		unique_ptr<Entity> Uptr{ e };
 		m_entities.emplace_back(move(Uptr));
 		return *e;
@@ -168,7 +214,4 @@ public:
 	{
 		return m_entities;
 	}
-
-private:
-	vector<unique_ptr<Entity>> m_entities;
 };

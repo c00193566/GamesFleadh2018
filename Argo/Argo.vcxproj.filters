@@ -19,6 +19,12 @@
     <Filter Include="Source Files\ECS">
       <UniqueIdentifier>{eac6000e-add3-458c-bb11-cb247f9332fb}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Load">
+      <UniqueIdentifier>{86101070-70d0-4fa9-8bc9-8d64b1751f5a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Load">
+      <UniqueIdentifier>{2fa3b39d-a9bd-45fd-9161-da2f3850bd03}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -47,6 +53,21 @@
     </ClCompile>
     <ClCompile Include="ColliderComponent.cpp">
       <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="ECS.cpp">
+      <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="JSONValue.cpp">
+      <Filter>Source Files\Load</Filter>
+    </ClCompile>
+    <ClCompile Include="JSON.cpp">
+      <Filter>Source Files\Load</Filter>
+    </ClCompile>
+    <ClCompile Include="LevelLoader.cpp">
+      <Filter>Source Files\Load</Filter>
+    </ClCompile>
+    <ClCompile Include="Collision.cpp">
+      <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -89,5 +110,28 @@
     <ClInclude Include="ColliderComponent.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
+    <ClInclude Include="JSON.h">
+      <Filter>Header Files\Load</Filter>
+    </ClInclude>
+    <ClInclude Include="JSONValue.h">
+      <Filter>Header Files\Load</Filter>
+    </ClInclude>
+    <ClInclude Include="LevelLoader.h">
+      <Filter>Header Files\Load</Filter>
+    </ClInclude>
+    <ClInclude Include="stdafx.h">
+      <Filter>Header Files\Load</Filter>
+    </ClInclude>
+    <ClInclude Include="GameData.h">
+      <Filter>Header Files\Load</Filter>
+    </ClInclude>
+    <ClInclude Include="Collision.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GeneralGameData.json">
+      <Filter>Resource Files</Filter>
+    </None>
   </ItemGroup>
 </Project>

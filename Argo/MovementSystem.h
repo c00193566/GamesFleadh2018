@@ -15,5 +15,6 @@
 
 struct MovementSystem
 {
-	static void ControlledMovement(vector<unique_ptr<Entity>> const &entity, float DT);
+	static void ControlledMovement(vector<Entity*> &entity, float DT);
+	static void BulletMovement(vector<Entity*> &entity);
 };

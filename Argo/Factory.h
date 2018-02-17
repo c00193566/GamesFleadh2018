@@ -13,11 +13,20 @@
 /// </summary>
 /// <author>Jack Keogh</author>
 
+enum Groups : size_t
+{
+	PlayerGroup,
+	WallGroup,
+	EnemyGroup,
+	TileGroup,
+	PlayerBulletGroup,
+};
+
 class Factory
 {
 public:
 	virtual void CreateEntity(EntityManager * EManager, SDL_Texture * Texture = nullptr, float x = 64, float y = 64,
-		float w = 32, float h = 32) = 0;
+		float w = 32, float h = 32) {};
 
 protected:
 	Factory() {};
@@ -37,14 +46,23 @@ public:
 	void CreateEntity(EntityManager * EManager, SDL_Texture * Texture, float x = 64, float y = 64, float w = 32, float h = 32) override;
 };
 
-class BulletFactory : public Factory
+class PlayerBulletFactory : public Factory
 {
-	BulletFactory() {};
+public:
+	PlayerBulletFactory() {};
+	void CreateEntity(EntityManager * EManager, SDL_Texture * Texture, float x = 64, float y = 64, float w = 32, float h = 32, float r = 0);
+};
+
+class FloorFactory : public Factory
+{
+public:
+	FloorFactory() {};
 	void CreateEntity(EntityManager * EManager, SDL_Texture * Texture, float x = 64, float y = 64, float w = 32, float h = 32) override;
 };
 
-class TileFactory : public Factory
+class WallFactory : public Factory
 {
-	TileFactory() {};
-	void CreateEntity(EntityManager * EManager, SDL_Texture * Texture, float x = 64, float y = 64, float w = 32, float h = 32, string type = "Walkway");
+public:
+	WallFactory() {};
+	void CreateEntity(EntityManager * EManager, SDL_Texture * Texture, float x = 64, float y = 64, float w = 32, float h = 32) override;
 };

@@ -1,7 +1,9 @@
 #pragma once
 #include <SDL.h>
 #include <iostream>
+#include <AssetHandler.h>
 #include "Components.h"
+#include "Factory.h"
 
 /// <class>InputSystem</class>
 /// <summary>
@@ -19,8 +21,10 @@ private:
 	bool down;
 	bool left; 
 	bool right;
+	bool fire;
 	int MouseX;
 	int MouseY;
+	AssetHandler * m_asset;
 
 public:
 	InputSystem();
@@ -32,7 +36,7 @@ public:
 	/// <param name="e">SDL_event</param>
 	/// <param name="entity">vector of unique ptr of Entity to loop through entities until
 	/// player is found.</param>
-	void KeyPressed(SDL_Event e, vector<unique_ptr<Entity>> const &entity);
+	void KeyPressed(SDL_Event e, vector<Entity*> &entity);
 
 	/// <summary>
 	/// Checks key up event and if the key up corresponds
@@ -41,7 +45,13 @@ public:
 	/// <param name="e">SDL_event</param>
 	/// <param name="entity">vector of unique ptr of Entity to loop through entities until
 	/// player is found.</param>
-	void KeyReleased(SDL_Event e, vector<unique_ptr<Entity>> const &entity);
+	void KeyReleased(SDL_Event e, vector<Entity*> &entity);
+
+	/// <summary>
+	/// Checks if the left mouse button is pressed or released.
+	/// </summary>
+	/// <param name="e">SDL_event</param>
+	void MouseButton(SDL_Event e);
 
 	/// <summary>
 	/// Checks mouse movement and updates the player entities rotation.
@@ -54,5 +64,5 @@ public:
 	/// </summary>
 	/// <param name="entity">vector of unique ptr of Entity to loop through entities until
 	/// player is found.</param>
-	void Update(vector<unique_ptr<Entity>> const &entity);
+	void Update(EntityManager * Manager, vector<Entity*> &entity, PlayerBulletFactory * BulletFactory);
 };

@@ -87,7 +87,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)\ExternalLibraries\AssetHandler\include;$(SolutionDir)\ExternalLibraries\SDL2-2.0.7\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -102,7 +102,7 @@
       <WarningLevel>Level3</WarningLevel>
       <Optimization>Disabled</Optimization>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)\ExternalLibraries\AssetHandler\include;$(SolutionDir)\ExternalLibraries\SDL2-2.0.7\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -119,7 +119,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)\ExternalLibraries\AssetHandler\include;$(SolutionDir)\ExternalLibraries\SDL2-2.0.7\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -138,7 +138,7 @@
       <FunctionLevelLinking>true</FunctionLevelLinking>
       <IntrinsicFunctions>true</IntrinsicFunctions>
       <SDLCheck>true</SDLCheck>
-      <PreprocessorDefinitions>NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <PreprocessorDefinitions>_CRT_SECURE_NO_WARNINGS</PreprocessorDefinitions>
       <AdditionalIncludeDirectories>$(SolutionDir)\ExternalLibraries\AssetHandler\include;$(SolutionDir)\ExternalLibraries\SDL2-2.0.7\include</AdditionalIncludeDirectories>
     </ClCompile>
     <Link>
@@ -152,10 +152,15 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ColliderComponent.cpp" />
+    <ClCompile Include="Collision.cpp" />
     <ClCompile Include="CommandComponent.cpp" />
+    <ClCompile Include="ECS.cpp" />
     <ClCompile Include="Factory.cpp" />
     <ClCompile Include="Game.cpp" />
     <ClCompile Include="InputSystem.cpp" />
+    <ClCompile Include="JSON.cpp" />
+    <ClCompile Include="JSONValue.cpp" />
+    <ClCompile Include="LevelLoader.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="MovementSystem.cpp" />
     <ClCompile Include="RenderSystem.cpp" />
@@ -163,18 +168,27 @@
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="ColliderComponent.h" />
+    <ClInclude Include="Collision.h" />
     <ClInclude Include="CommandComponent.h" />
     <ClInclude Include="Components.h" />
     <ClInclude Include="ECS.h" />
     <ClInclude Include="Factory.h" />
     <ClInclude Include="Game.h" />
+    <ClInclude Include="GameData.h" />
     <ClInclude Include="InputSystem.h" />
+    <ClInclude Include="JSON.h" />
+    <ClInclude Include="JSONValue.h" />
     <ClInclude Include="KeyComponent.h" />
+    <ClInclude Include="LevelLoader.h" />
     <ClInclude Include="MovementSystem.h" />
     <ClInclude Include="RenderSystem.h" />
     <ClInclude Include="SpriteComponent.h" />
+    <ClInclude Include="stdafx.h" />
     <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="Vector2D.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="GeneralGameData.json" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

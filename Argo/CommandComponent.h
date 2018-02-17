@@ -3,6 +3,7 @@
 #include <SDL.h>
 #include "ECS.h"
 #include "TransformComponent.h"
+#include "Factory.h"
 
 ///<class>CommandComponent</class>
 /// <summary>
@@ -12,6 +13,9 @@
 /// key codes accordingly.
 /// </summary>
 /// <author>Jack Keogh</author>
+
+class PlayerBulletFactory;
+class Fire;
 
 class Command
 {
@@ -45,6 +49,7 @@ public:
 	/// <param name="Tag">string defining the command to return.</param>
 	/// <returns>A command.</returns>
 	Command * getCommand(string Tag);
+	Fire * getFireCommand();
 };
 
 class MoveRight : public Command
@@ -55,15 +60,24 @@ public:
 
 class MoveLeft : public Command
 {
+public:
 	void Execute(TransformComponent * T) override;
 };
 
 class MoveUp : public Command
 {
+public:
 	void Execute(TransformComponent * T) override;
 };
 
 class MoveDown : public Command
 {
+public:
 	void Execute(TransformComponent * T) override;
+};
+
+class Fire : public Command
+{
+public:
+	void Execute(TransformComponent * T, PlayerBulletFactory * F, SDL_Texture * Texture, EntityManager * Manager);
 };

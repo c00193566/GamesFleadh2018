@@ -23,7 +23,7 @@ public:
 	int width;
 	int height;
 	int scale;
-	int speed;
+	float speed;
 	float rotation;
 
 	/// <summary>
@@ -54,4 +54,9 @@ public:
 		velocity.Zero();
 	}
 
+	Vector2f getVelocity() { return velocity; };
+
+	void setPosition(Vector2f value) { position = value; };
+	void setVelocity(Vector2f value) { velocity = value; };
+	void setAcceleration(Vector2f value) { acceleration = value; };
 };

@@ -11,11 +11,17 @@ void CommandComponent::Init()
 	m_commands["Right"] = new MoveRight;
 	m_commands["Up"] = new MoveUp;
 	m_commands["Down"] = new MoveDown;
+	m_commands["Fire"] = new Fire;
 }
 
 Command * CommandComponent::getCommand(string Tag)
 {
 	return m_commands[Tag];
+}
+
+Fire * CommandComponent::getFireCommand()
+{
+	return static_cast<Fire*>(m_commands["Fire"]);
 }
 
 //////////////////////////////////////////////////////////////
@@ -56,4 +62,14 @@ void MoveDown::Execute(TransformComponent * T)
 	{
 		T->acceleration.y += 0.2f;
 	}
+}
+
+//////////////////////////////////////////////////////////////
+
+void Fire::Execute(TransformComponent * T, PlayerBulletFactory * F, SDL_Texture * Texture, EntityManager * Manager)
+{
+	Vector2f pos = T->position;
+	pos.x += T->width / 2;
+	pos.y += T->height / 2;
+	F->CreateEntity(Manager, Texture, pos.x, pos.y, 5, 10, T->rotation);
 }
