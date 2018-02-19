@@ -46,6 +46,10 @@
 						{
 							"name": "RedBullet",
 							"file": "Assets/Bullets/Red.png"
+						},
+						{
+							"name": "Zombie",
+							"file": "Assets/Enemies/Zombie.png"
 						}
 					]
     },

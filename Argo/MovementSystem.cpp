@@ -1,6 +1,6 @@
 #include "MovementSystem.h"
 
-void MovementSystem::ControlledMovement(vector<Entity*> &entity, float DT)
+void MovementSystem::ControlledMovement(vector<Entity*> &entity)
 {
 	for (int i = 0; i < entity.size(); i++)
 	{

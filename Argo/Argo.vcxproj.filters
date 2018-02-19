@@ -25,6 +25,12 @@
     <Filter Include="Source Files\Load">
       <UniqueIdentifier>{2fa3b39d-a9bd-45fd-9161-da2f3850bd03}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Header Files\Scenes">
+      <UniqueIdentifier>{e4f6a73d-ca63-4780-84dc-a71697c5ed2d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Source Files\Scenes">
+      <UniqueIdentifier>{c7607aca-ef92-4651-973c-d6b8eacba239}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="Main.cpp">
@@ -71,6 +77,12 @@
     </ClCompile>
     <ClCompile Include="WeaponComponent.cpp">
       <Filter>Source Files\ECS</Filter>
+    </ClCompile>
+    <ClCompile Include="SceneManager.cpp">
+      <Filter>Source Files\Scenes</Filter>
+    </ClCompile>
+    <ClCompile Include="Level1.cpp">
+      <Filter>Source Files\Scenes</Filter>
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
@@ -136,6 +148,15 @@
     </ClInclude>
     <ClInclude Include="BulletComponent.h">
       <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="Level1.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="SceneManager.h">
+      <Filter>Header Files\Scenes</Filter>
+    </ClInclude>
+    <ClInclude Include="Scene.h">
+      <Filter>Header Files\Scenes</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

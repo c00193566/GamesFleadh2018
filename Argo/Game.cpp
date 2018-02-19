@@ -2,112 +2,21 @@
 
 void Game::LocalEvent()
 {
-	SDL_Event event;
-
-	while (SDL_PollEvent(&event))
-	{
-		if (event.type == SDL_QUIT)
-		{
-			m_running = false;
-		}
-
-		m_inputsystem->KeyPressed(event, m_entManager->getGroup(Groups::PlayerGroup));
-		m_inputsystem->KeyReleased(event, m_entManager->getGroup(Groups::PlayerGroup));
-		m_inputsystem->MouseMove(event);
-		m_inputsystem->MouseButton(event);
-	}
+	m_sceneManager->EventScene();
 }
 
 void Game::Update(float DT)
 {
-	m_entManager->Update();
-	m_inputsystem->Update(m_entManager, m_entManager->getGroup(Groups::PlayerGroup), m_pBulletFactory);
-
-	MovementSystem::ControlledMovement(m_entManager->getGroup(Groups::PlayerGroup), DT);
-	MovementSystem::BulletMovement(m_entManager->getGroup(Groups::PlayerBulletGroup));
-
-	Collision::WallCollision(m_entManager->getGroup(Groups::PlayerGroup), m_entManager->getGroup(Groups::WallGroup));
-	Collision::BulletWallCollision(m_entManager->getGroup(Groups::PlayerBulletGroup), m_entManager->getGroup(Groups::WallGroup));
-
-	m_entManager->Refresh();
-
+	m_sceneManager->UpdateScene();
 }
 
 void Game::Render()
 {
 	RenderSystem::Clear();
 
-	m_entManager->Draw();
+	m_sceneManager->RenderScene();
 
 	RenderSystem::Present();
-}
-
-void Game::CreateLevel()
-{
-	int level = 0;
-
-	vector<vector<int>> room = GameData::m_roomLayout.at(0);
-
-	int x = 0;
-	int y = 0;
-	int width = 64, height = 64;
-
-	for (int i = 0; i < room.size(); i++)
-	{
-		for (int j = 0; j < room.at(i).size(); j++)
-		{
-			x = j * width;
-			y = i * height;
-
-			// Horizontal Wall
-			if (room.at(i).at(j) == 1)
-			{
-				m_wallFactory->CreateEntity(m_entManager, m_assets->getTexture("HorizontalWall"), x, y, width, height);
-			}
-
-			// Vertical Wall
-			if (room.at(i).at(j) == 2)
-			{
-				m_wallFactory->CreateEntity(m_entManager, m_assets->getTexture("VerticalWall"), x, y, width, height);
-			}
-
-			// Top Left Wall
-			if (room.at(i).at(j) == 3)
-			{
-				m_wallFactory->CreateEntity(m_entManager, m_assets->getTexture("TopLeftWall"), x, y, width, height);
-			}
-
-			// Top Right Wall
-			if (room.at(i).at(j) == 4)
-			{
-				m_wallFactory->CreateEntity(m_entManager, m_assets->getTexture("TopRightWall"), x, y, width, height);
-			}
-
-			// Bottom Left Wall
-			if (room.at(i).at(j) == 5)
-			{
-				m_wallFactory->CreateEntity(m_entManager, m_assets->getTexture("BottomLeftWall"), x, y, width, height);
-			}
-
-			// Bottom Right Wall
-			if (room.at(i).at(j) == 6)
-			{
-				m_wallFactory->CreateEntity(m_entManager, m_assets->getTexture("BottomRightWall"), x, y, width, height);
-			}
-
-			// Basic Floor
-			if (room.at(i).at(j) == 7)
-			{
-				m_floorFactory->CreateEntity(m_entManager, m_assets->getTexture("BasicFloor"), x, y, width, height);
-			}
-
-			// Cross Section Wall
-			if (room.at(i).at(j) == 8)
-			{
-				m_wallFactory->CreateEntity(m_entManager, m_assets->getTexture("CrossSection"), x, y, width, height);
-			}
-		}
-	}
 }
 
 Game::Game() :
@@ -140,27 +49,11 @@ void Game::Init()
 		m_assets->addTexture(iter->first, iter->second, RenderSystem::Renderer());
 	}
 
-	// InputSystem initialise
-	m_inputsystem = new InputSystem;
+	// Create scene manager
+	m_sceneManager = new SceneManager;
 
-	// EntityManager initialise
-	m_entManager = new EntityManager;
-
-	// Factories initialise
-	m_playerFactory = new PlayerFactory;
-	m_wallFactory = new WallFactory;
-	m_floorFactory = new FloorFactory;
-	m_aiFactory = new AIFactory;
-	m_pBulletFactory = new PlayerBulletFactory;
-
-	// Create Level
-	CreateLevel();
-
-	// Create player entity
-	m_playerFactory->CreateEntity(m_entManager, m_assets->getTexture("HM"), 80, 80);
-
-	// Create enemy entity
-	m_aiFactory->CreateEntity(m_entManager, m_assets->getTexture("Zombie"), 472, 664);
+	// Initialise scene
+	m_sceneManager->LoadNextLevel();
 }
 
 void Game::Run()
@@ -191,6 +84,8 @@ void Game::Run()
 		Update(DT);
 		Render();
 		///
+
+		m_running = m_sceneManager->getScene()->Running();
 
 		FRAME_TIME = SDL_GetTicks() - START_FRAME;
 

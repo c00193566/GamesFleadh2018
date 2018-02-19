@@ -15,6 +15,6 @@
 
 struct MovementSystem
 {
-	static void ControlledMovement(vector<Entity*> &entity, float DT);
+	static void ControlledMovement(vector<Entity*> &entity);
 	static void BulletMovement(vector<Entity*> &entity);
 };
