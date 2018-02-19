@@ -13,15 +13,6 @@
 /// </summary>
 /// <author>Jack Keogh</author>
 
-enum Groups : size_t
-{
-	PlayerGroup,
-	WallGroup,
-	EnemyGroup,
-	TileGroup,
-	PlayerBulletGroup,
-};
-
 class Factory
 {
 public:

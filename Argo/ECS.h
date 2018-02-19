@@ -12,6 +12,15 @@ class Component;
 class Entity;
 class EntityManager;
 
+enum Groups : size_t
+{
+	PlayerGroup,
+	WallGroup,
+	EnemyGroup,
+	TileGroup,
+	PlayerBulletGroup,
+};
+
 using ComponentID = size_t;
 using Group = size_t;
 
@@ -140,7 +149,7 @@ class EntityManager
 {
 private:
 	vector<unique_ptr<Entity>> m_entities;
-	array<vector<Entity*>, maxGroups> m_groupedEntites;
+	array<vector<Entity*>, maxGroups> m_groupedEntities;
 
 public:
 	EntityManager()
@@ -168,7 +177,7 @@ public:
 	{
 		for (auto i(0u); i < maxGroups; i++)
 		{
-			auto& v(m_groupedEntites[i]);
+			auto& v(m_groupedEntities[i]);
 
 			v.erase(std::remove_if(std::begin(v), std::end(v),[i](Entity* mEntity)
 			{
@@ -187,12 +196,12 @@ public:
 
 	void addToGroup(Entity * ent, Group group)
 	{
-		m_groupedEntites[group].emplace_back(ent);
+		m_groupedEntities[group].emplace_back(ent);
 	}
 
 	vector<Entity*>& getGroup(Group group)
 	{
-		return m_groupedEntites[group];
+		return m_groupedEntities[group];
 	}
 
 	Entity& addEntity()

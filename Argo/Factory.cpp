@@ -9,7 +9,7 @@ void PlayerFactory::CreateEntity(EntityManager * EManager, SDL_Texture * Texture
 	player.addComponent<CommandComponent>();
 	player.addComponent<KeyComponent>(SDLK_w, SDLK_s, SDLK_a, SDLK_d);
 	player.addComponent<ColliderComponent>();
-	player.addComponent<WeaponComponent>(30, 0.2f, 1.0f);
+	player.addComponent<WeaponComponent>(8, 0.2f, 1.0f);
 	player.addGroup(Groups::PlayerGroup);
 }
 
