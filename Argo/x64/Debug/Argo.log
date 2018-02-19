@@ -1,0 +1,108 @@
+﻿  ColliderComponent.cpp
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\transformcomponent.h(46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(63): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(72): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(73): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(8): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(9): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(14): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(15): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(20): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(21): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(26): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(27): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(32): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(33): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(41): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(42): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(47): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(48): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(53): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(54): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(59): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(60): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(65): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\collidercomponent.cpp(66): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+  Compiling...
+  WeaponComponent.cpp
+  SceneManager.cpp
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\transformcomponent.h(46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(63): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(72): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(73): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  MovementSystem.cpp
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\transformcomponent.h(46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(63): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(72): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(73): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\movementsystem.cpp(10): warning C4305: '*=': truncation from 'double' to 'float'
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\movementsystem.cpp(11): warning C4305: '*=': truncation from 'double' to 'float'
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\movementsystem.cpp(14): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\movementsystem.cpp(25): warning C4244: 'argument': conversion from 'float' to 'const int', possible loss of data
+  Main.cpp
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\transformcomponent.h(46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(63): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(72): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(73): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Level1.cpp
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\transformcomponent.h(46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(63): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(72): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(73): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\level1.cpp(53): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\level1.cpp(59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\level1.cpp(65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\level1.cpp(71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\level1.cpp(77): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\level1.cpp(83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\level1.cpp(89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\level1.cpp(95): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  InputSystem.cpp
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\transformcomponent.h(46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(63): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(72): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(73): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\inputsystem.cpp(134): warning C4244: '=': conversion from 'double' to 'float', possible loss of data
+  Game.cpp
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\transformcomponent.h(46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(63): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(72): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(73): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Factory.cpp
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\transformcomponent.h(46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(63): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(72): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(73): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\ecs.h(106): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+  c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\factory.cpp(7): note: see reference to function template instantiation 'T &Entity::addComponent<TransformComponent,Vector2f,float&,float&,int,int,int,int>(Vector2f &&,float &,float &,int &&,int &&,int &&,int &&)' being compiled
+          with
+          [
+              T=TransformComponent
+          ]
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\ecs.h(106): warning C4244: 'argument': conversion from 'float' to 'int', possible loss of data
+  ECS.cpp
+  CommandComponent.cpp
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\transformcomponent.h(46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(63): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(72): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(73): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Collision.cpp
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\transformcomponent.h(46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(63): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(72): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\gameuser\desktop\gamesfleadh\gamesfleadh2018\argo\spritecomponent.h(73): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+  Generating Code...
+     Creating library C:\Users\gameuser\Desktop\GamesFleadh\GamesFleadh2018\x64\Debug\Argo.lib and object C:\Users\gameuser\Desktop\GamesFleadh\GamesFleadh2018\x64\Debug\Argo.exp
+AssetHandler.lib(AssetHandler.obj) : warning LNK4099: PDB 'AssetHandler.pdb' was not found with 'AssetHandler.lib(AssetHandler.obj)' or at 'C:\Users\gameuser\Desktop\GamesFleadh\GamesFleadh2018\x64\Debug\AssetHandler.pdb'; linking object as if no debug info
+  Argo.vcxproj -> C:\Users\gameuser\Desktop\GamesFleadh\GamesFleadh2018\x64\Debug\Argo.exe

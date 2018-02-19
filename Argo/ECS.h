@@ -56,8 +56,6 @@ private:
 	ComponentBitSet m_componentBitSet;
 	GroupBitSet m_groupBitSet;
 
-	string m_tag;
-
 public:
 	Entity(EntityManager & Manager) :
 		m_manager(Manager)
@@ -136,11 +134,6 @@ public:
 	{
 		return m_componentBitSet[getComponentTypeID<T>()];
 	}
-
-	string ID()
-	{
-		return m_tag;
-	};
 };
 
 class EntityManager
