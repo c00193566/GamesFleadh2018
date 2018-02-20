@@ -64,6 +64,18 @@ Vector2f & Vector2f::operator/=(const Vector2f v)
 	return this->Divide(v);
 }
 
+bool Vector2f::operator==(const Vector2f v)
+{
+	if (this->x == v.x && this->y == v.y)
+	{
+		return true;
+	}
+	else
+	{
+		return false;
+	}
+}
+
 Vector2f & Vector2f::operator*(const int i)
 {
 	this->x *= i;

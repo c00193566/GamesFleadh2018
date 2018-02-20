@@ -31,6 +31,7 @@ struct Vector2f
 	Vector2f& operator-=(const Vector2f v);
 	Vector2f& operator*=(const Vector2f v);
 	Vector2f& operator/=(const Vector2f v);
+	bool operator==(const Vector2f v);
 
 	Vector2f& operator*(const int i);
 	Vector2f& Zero();

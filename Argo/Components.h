@@ -7,3 +7,4 @@
 #include "ColliderComponent.h"
 #include "WeaponComponent.h"
 #include "BulletComponent.h"
+#include "AIComponent.h"
