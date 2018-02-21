@@ -55,6 +55,7 @@ public:
 	}
 
 	Vector2f getVelocity() { return velocity; };
+	Vector2f getPosition() { return position; };
 
 	void setPosition(Vector2f value) { position = value; };
 	void setVelocity(Vector2f value) { velocity = value; };

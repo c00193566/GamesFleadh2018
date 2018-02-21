@@ -9,6 +9,7 @@
 #include "InputSystem.h"
 #include "MovementSystem.h"
 #include "Collision.h"
+#include "AISystem.h"
 
 class Level1 : public Scene
 {
@@ -21,6 +22,9 @@ private:
 
 	// Input system
 	InputSystem * m_inputsystem;
+
+	// AI system
+	AISystem * m_aisystem;
 
 	// Factories
 	Factory * m_playerFactory;

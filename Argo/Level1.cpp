@@ -23,11 +23,16 @@ void Level1::Initialise()
 	// Create input system
 	m_inputsystem = new InputSystem;
 
+	// Create AI system
+	m_aisystem = new AISystem;
+
 	// Load Level
 	LoadLevel();
 
 	// Create Player
 	m_playerFactory->CreateEntity(m_entManager, m_assets->getTexture("HM"), 336, 336);
+	m_aiFactory->CreateEntity(m_entManager, m_assets->getTexture("Zombie"), 80, 80);
+	m_aiFactory->CreateEntity(m_entManager, m_assets->getTexture("Zombie"), 400, 80);
 }
 
 void Level1::LoadLevel()
@@ -100,15 +105,29 @@ void Level1::LoadLevel()
 
 void Level1::Update()
 {
+	// Update Entity manager
 	m_entManager->Update();
+
+	// Update input system
 	m_inputsystem->Update(m_entManager, m_entManager->getGroup(Groups::PlayerGroup), m_pBulletFactory);
 
+	// Update ai system
+	m_aisystem->Update(m_entManager->getGroup(Groups::EnemyGroup), m_entManager->getGroup(Groups::PlayerGroup));
+
+	// Update MovementSystem
 	MovementSystem::ControlledMovement(m_entManager->getGroup(Groups::PlayerGroup));
+	MovementSystem::ControlledMovement(m_entManager->getGroup(Groups::EnemyGroup));
 	MovementSystem::BulletMovement(m_entManager->getGroup(Groups::PlayerBulletGroup));
 
-	Collision::WallCollision(m_entManager->getGroup(Groups::PlayerGroup), m_entManager->getGroup(Groups::WallGroup));
+	// Update collisions
+	Collision::BounceCollision(m_entManager->getGroup(Groups::PlayerGroup), m_entManager->getGroup(Groups::WallGroup));
+	Collision::BounceCollision(m_entManager->getGroup(Groups::EnemyGroup), m_entManager->getGroup(Groups::WallGroup));
+	Collision::BounceCollision(m_entManager->getGroup(Groups::PlayerGroup), m_entManager->getGroup(Groups::PlayerGroup));
+	Collision::BounceCollision(m_entManager->getGroup(Groups::EnemyGroup), m_entManager->getGroup(Groups::EnemyGroup));
 	Collision::BulletWallCollision(m_entManager->getGroup(Groups::PlayerBulletGroup), m_entManager->getGroup(Groups::WallGroup));
+	Collision::BulletEntityCollision(m_entManager->getGroup(Groups::PlayerBulletGroup), m_entManager->getGroup(Groups::EnemyGroup));
 
+	// Refresh entity manager
 	m_entManager->Refresh();
 }
 

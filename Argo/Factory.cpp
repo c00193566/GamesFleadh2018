@@ -20,6 +20,8 @@ void AIFactory::CreateEntity(EntityManager * EManager, SDL_Texture * Texture, fl
 {
 	auto& AI = EManager->addEntity();
 	AI.addComponent<TransformComponent>(Vector2f(x, y), w, h, 0, 1, 1, 2);
+	AI.addComponent<AIComponent>();
+	AI.addComponent<CommandComponent>();
 	AI.addComponent<SpriteComponent>(Texture, 43, 43);
 	AI.addComponent<ColliderComponent>();
 	AI.addGroup(Groups::EnemyGroup);

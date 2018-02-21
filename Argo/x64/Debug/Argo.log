@@ -1,29 +1,7 @@
-﻿  Vector2D.cpp
-  PathFinding.cpp
-c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
-c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(35): warning C4244: '=': conversion from 'std::numeric_limits<int>::_Ty' to 'float', possible loss of data
-c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(36): warning C4244: '=': conversion from 'std::numeric_limits<int>::_Ty' to 'float', possible loss of data
-c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(37): warning C4244: '=': conversion from 'std::numeric_limits<int>::_Ty' to 'float', possible loss of data
-c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(64): warning C4244: '=': conversion from 'std::numeric_limits<int>::_Ty' to 'float', possible loss of data
-c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(65): warning C4244: '=': conversion from 'std::numeric_limits<int>::_Ty' to 'float', possible loss of data
-c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(66): warning C4244: '=': conversion from 'std::numeric_limits<int>::_Ty' to 'float', possible loss of data
-c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.cpp(45): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.cpp(46): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.cpp(100): warning C4244: 'initializing': conversion from 'float' to 'int', possible loss of data
-c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.cpp(105): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.cpp(113): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
-  Generating Code...
-  Skipping... (no relevant changes detected)
-  Level1.cpp
-  SceneManager.cpp
-  MovementSystem.cpp
-  Main.cpp
-  InputSystem.cpp
-  Game.cpp
-  Factory.cpp
-  CommandComponent.cpp
-  Collision.cpp
-  ColliderComponent.cpp
-     Creating library C:\Users\Jack\Desktop\Personal\Projects\Argo\x64\Debug\Argo.lib and object C:\Users\Jack\Desktop\Personal\Projects\Argo\x64\Debug\Argo.exp
+﻿  Collision.cpp
+c:\users\jack\desktop\personal\projects\argo\argo\transformcomponent.h(46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\spritecomponent.h(63): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\spritecomponent.h(64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\spritecomponent.h(72): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\spritecomponent.h(73): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
   Argo.vcxproj -> C:\Users\Jack\Desktop\Personal\Projects\Argo\x64\Debug\Argo.exe
