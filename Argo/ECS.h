@@ -16,6 +16,7 @@ enum Groups : size_t
 {
 	PlayerGroup,
 	WallGroup,
+	DoorGroup,
 	EnemyGroup,
 	TileGroup,
 	PlayerBulletGroup,

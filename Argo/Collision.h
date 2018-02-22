@@ -34,6 +34,21 @@ struct Collision
 	static void BulletEntityCollision(vector<Entity*> bullets, vector<Entity*> entities);
 
 	/// <summary>
+	/// This method is to check for enemy on player collision
+	/// </summary>
+	/// <param name="AI">vector of entity ptrs defining the AI.</param>
+	/// <param name="players">vector of entity ptrs defining the players.</param>
+	static void EnemyPlayerCollision(vector<Entity*> AI, vector<Entity*> players);
+
+	/// <summary>
+	/// A damage calculation method.
+	/// </summary>
+	/// <param name="p">float defining power.</param>
+	/// <param name="d">float defining defence.</param>
+	/// <returns></returns>
+	static float DamageCal(float p, float d);
+
+	/// <summary>
 	/// Simple box collision method.
 	/// </summary>
 	/// <param name="obj1">SDL_Rect of object 1.</param>

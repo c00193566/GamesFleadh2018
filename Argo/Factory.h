@@ -57,3 +57,10 @@ public:
 	WallFactory() {};
 	void CreateEntity(EntityManager * EManager, SDL_Texture * Texture, float x = 64, float y = 64, float w = 32, float h = 32) override;
 };
+
+class DoorFactory : public Factory
+{
+public:
+	DoorFactory() {};
+	void CreateEntity(EntityManager * EManager, SDL_Texture * Texture, float x = 64, float y = 64, float w = 32, float h = 32) override;
+};

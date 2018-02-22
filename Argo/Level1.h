@@ -31,6 +31,7 @@ private:
 	Factory * m_wallFactory;
 	Factory * m_floorFactory;
 	Factory * m_aiFactory;
+	Factory * m_doorFactory;
 	PlayerBulletFactory * m_pBulletFactory;
 
 public:

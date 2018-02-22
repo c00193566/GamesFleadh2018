@@ -8,3 +8,4 @@
 #include "WeaponComponent.h"
 #include "BulletComponent.h"
 #include "AIComponent.h"
+#include "StatComponet.h"

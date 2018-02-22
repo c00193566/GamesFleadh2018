@@ -19,6 +19,7 @@ void Level1::Initialise()
 	m_floorFactory = new FloorFactory;
 	m_aiFactory = new AIFactory;
 	m_pBulletFactory = new PlayerBulletFactory;
+	m_doorFactory = new DoorFactory;
 
 	// Create input system
 	m_inputsystem = new InputSystem;
@@ -99,6 +100,18 @@ void Level1::LoadLevel()
 			{
 				m_wallFactory->CreateEntity(m_entManager, m_assets->getTexture("CrossSection"), x, y, width, height);
 			}
+
+			// Vertical Door
+			if (room.at(i).at(j) == 11)
+			{
+				m_doorFactory->CreateEntity(m_entManager, m_assets->getTexture("VerticalDoor"), x, y, width, height);
+			}
+
+			// Horizontal Door
+			if (room.at(i).at(j) == 12)
+			{
+				m_doorFactory->CreateEntity(m_entManager, m_assets->getTexture("HorizontalDoor"), x, y, width, height);
+			}
 		}
 	}
 }
@@ -121,14 +134,22 @@ void Level1::Update()
 
 	// Update collisions
 	Collision::BounceCollision(m_entManager->getGroup(Groups::PlayerGroup), m_entManager->getGroup(Groups::WallGroup));
+	Collision::BounceCollision(m_entManager->getGroup(Groups::PlayerGroup), m_entManager->getGroup(Groups::DoorGroup));
 	Collision::BounceCollision(m_entManager->getGroup(Groups::EnemyGroup), m_entManager->getGroup(Groups::WallGroup));
 	Collision::BounceCollision(m_entManager->getGroup(Groups::PlayerGroup), m_entManager->getGroup(Groups::PlayerGroup));
 	Collision::BounceCollision(m_entManager->getGroup(Groups::EnemyGroup), m_entManager->getGroup(Groups::EnemyGroup));
 	Collision::BulletWallCollision(m_entManager->getGroup(Groups::PlayerBulletGroup), m_entManager->getGroup(Groups::WallGroup));
 	Collision::BulletEntityCollision(m_entManager->getGroup(Groups::PlayerBulletGroup), m_entManager->getGroup(Groups::EnemyGroup));
+	Collision::EnemyPlayerCollision(m_entManager->getGroup(Groups::EnemyGroup), m_entManager->getGroup(Groups::PlayerGroup));
 
 	// Refresh entity manager
 	m_entManager->Refresh();
+
+	// Restart level
+	if (m_entManager->getGroup(Groups::PlayerGroup).size() <= 0)
+	{
+		Initialise();
+	}
 }
 
 void Level1::Render()

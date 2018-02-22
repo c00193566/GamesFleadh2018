@@ -4,13 +4,16 @@ void Collision::BounceCollision(vector<Entity*> characters, vector<Entity*> othe
 {
 	float bounce;
 
-	if (characters.at(0)->hasGroup(Groups::PlayerGroup))
+	if (characters.size() > 0)
 	{
-		bounce = 2;
-	}
-	else
-	{
-		bounce = 5;
+		if (characters.at(0)->hasGroup(Groups::PlayerGroup))
+		{
+			bounce = 2;
+		}
+		else
+		{
+			bounce = 5;
+		}
 	}
 
 	for (int character = 0; character < characters.size(); character++)
@@ -87,9 +90,91 @@ void Collision::BulletEntityCollision(vector<Entity*> bullets, vector<Entity*> e
 				entity->getComponent<ColliderComponent>().getCollider()))
 			{
 				bullet->setActive(false);
+
+				float damage = DamageCal(entity->getComponent<StatComponent>().getPower(),
+					entity->getComponent<StatComponent>().getDefence());
+
+				float health = entity->getComponent<StatComponent>().getHealth();
+
+				health -= damage;
+
+				entity->getComponent<StatComponent>().setHealth(health);
 			}
 		}
 	}
+}
+
+void Collision::EnemyPlayerCollision(vector<Entity*> AI, vector<Entity*> players)
+{
+	float bounce = 5.0f;
+
+	for (Entity * player : players)
+	{
+		for (Entity * enemy : AI)
+		{
+			bool collision = false;
+
+			if (AABB(enemy->getComponent<ColliderComponent>().getLeft(),
+				player->getComponent<ColliderComponent>().getCollider()))
+			{
+				enemy->getComponent<TransformComponent>().setPosition(
+					Vector2f(enemy->getComponent<TransformComponent>().position.x + bounce,
+						enemy->getComponent<TransformComponent>().position.y));
+				collision = true;
+			}
+
+			// Up
+			if (AABB(enemy->getComponent<ColliderComponent>().getTop(),
+				player->getComponent<ColliderComponent>().getCollider()))
+			{
+				enemy->getComponent<TransformComponent>().setPosition(
+					Vector2f(enemy->getComponent<TransformComponent>().position.x,
+						enemy->getComponent<TransformComponent>().position.y + bounce));
+				collision = true;
+			}
+
+			// Right
+			if (AABB(enemy->getComponent<ColliderComponent>().getRight(),
+				player->getComponent<ColliderComponent>().getCollider()))
+			{
+				enemy->getComponent<TransformComponent>().setPosition(
+					Vector2f(enemy->getComponent<TransformComponent>().position.x - bounce,
+						enemy->getComponent<TransformComponent>().position.y));
+				collision = true;
+			}
+
+			// Down
+			if (AABB(enemy->getComponent<ColliderComponent>().getBottom(),
+				player->getComponent<ColliderComponent>().getCollider()))
+			{
+				enemy->getComponent<TransformComponent>().setPosition(
+					Vector2f(enemy->getComponent<TransformComponent>().position.x,
+						enemy->getComponent<TransformComponent>().position.y - bounce));
+				collision = true;
+			}
+
+			if (collision)
+			{
+				float damage = DamageCal(enemy->getComponent<StatComponent>().getPower(),
+					player->getComponent<StatComponent>().getDefence());
+
+				float health = player->getComponent<StatComponent>().getHealth();
+
+				health -= damage;
+
+				player->getComponent<StatComponent>().setHealth(health);
+			}
+		}
+	}
+}
+
+float Collision::DamageCal(float p, float d)
+{
+	float Damage;
+
+	Damage = (p * 4.0f) / d;
+
+	return Damage;
 }
 
 bool Collision::AABB(SDL_Rect obj1, SDL_Rect obj2)

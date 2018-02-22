@@ -67,21 +67,18 @@ std::vector<Vector2f> PathFinder::AStar(Cell* start, Cell* target)
 
 		Cell* current = openSet.at(smallest);
 
-		std::cout << current->GetGridPosition().x << " " << current->GetGridPosition().y << std::endl;
-
 		//if the search has reached the target
 		if (*current == *target)
 		{
 			std::vector<Vector2f> path;
 			path.push_back(current->GetOrigin());
-			std::cout << "Found target" << std::endl;
-			std::cout << "Path: " << current->GetGridPosition().x << " " << current->GetGridPosition().y << std::endl;
+
 			//follow back through all the parent pointers to the first cell
 			//First cell should be the only cell in the 
 			while (current->parent != nullptr)
 			{
 				current = current->parent;
-				std::cout << "Path: " << current->GetGridPosition().x << " " << current->GetGridPosition().y << std::endl;
+
 				path.push_back(current->GetOrigin());
 			}
 
@@ -120,7 +117,6 @@ std::vector<Vector2f> PathFinder::AStar(Cell* start, Cell* target)
 		}
 	}
 
-	std::cout << "Unable to find path" << std::endl;
 	std::vector<Vector2f> err;
 	return err;
 }

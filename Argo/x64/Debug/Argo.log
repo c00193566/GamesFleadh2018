@@ -1,7 +1,26 @@
-﻿  Collision.cpp
+﻿  Level1.cpp
 c:\users\jack\desktop\personal\projects\argo\argo\transformcomponent.h(46): warning C4244: 'initializing': conversion from 'int' to 'float', possible loss of data
 c:\users\jack\desktop\personal\projects\argo\argo\spritecomponent.h(63): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 c:\users\jack\desktop\personal\projects\argo\argo\spritecomponent.h(64): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 c:\users\jack\desktop\personal\projects\argo\argo\spritecomponent.h(72): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
 c:\users\jack\desktop\personal\projects\argo\argo\spritecomponent.h(73): warning C4244: '=': conversion from 'float' to 'int', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(26): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(27): warning C4244: '=': conversion from 'int' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(35): warning C4244: '=': conversion from 'std::numeric_limits<int>::_Ty' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(36): warning C4244: '=': conversion from 'std::numeric_limits<int>::_Ty' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(37): warning C4244: '=': conversion from 'std::numeric_limits<int>::_Ty' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(64): warning C4244: '=': conversion from 'std::numeric_limits<int>::_Ty' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(65): warning C4244: '=': conversion from 'std::numeric_limits<int>::_Ty' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\pathfinding.h(66): warning C4244: '=': conversion from 'std::numeric_limits<int>::_Ty' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\level1.cpp(59): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\level1.cpp(65): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\level1.cpp(71): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\level1.cpp(77): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\level1.cpp(83): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\level1.cpp(89): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\level1.cpp(95): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\level1.cpp(101): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\level1.cpp(107): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+c:\users\jack\desktop\personal\projects\argo\argo\level1.cpp(113): warning C4244: 'argument': conversion from 'int' to 'float', possible loss of data
+cl : Command line warning D9028: minimal rebuild failure, reverting to normal build
   Argo.vcxproj -> C:\Users\Jack\Desktop\Personal\Projects\Argo\x64\Debug\Argo.exe
