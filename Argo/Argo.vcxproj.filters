@@ -179,6 +179,12 @@
     <ClInclude Include="StatComponet.h">
       <Filter>Header Files\ECS</Filter>
     </ClInclude>
+    <ClInclude Include="HUDComponent.h">
+      <Filter>Header Files\ECS</Filter>
+    </ClInclude>
+    <ClInclude Include="WaveSystem.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <None Include="GeneralGameData.json">

@@ -184,6 +184,7 @@
     <ClInclude Include="Factory.h" />
     <ClInclude Include="Game.h" />
     <ClInclude Include="GameData.h" />
+    <ClInclude Include="HUDComponent.h" />
     <ClInclude Include="InputSystem.h" />
     <ClInclude Include="JSON.h" />
     <ClInclude Include="JSONValue.h" />
@@ -200,6 +201,7 @@
     <ClInclude Include="Level1.h" />
     <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="Vector2D.h" />
+    <ClInclude Include="WaveSystem.h" />
     <ClInclude Include="WeaponComponent.h" />
   </ItemGroup>
   <ItemGroup>

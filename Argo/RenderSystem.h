@@ -34,7 +34,7 @@ public:
 	/// <param name="y">int variable determining window y pos on screen. Defaults to center.</param>
 	/// <param name="w">int determines width of window. Defaults to 762.</param>
 	/// <param name="h">int determines height of window. Defaults to 762.</param>
-	static void Init(string title = "Game", int x = 0, int y = 0, int w = 762, int h = 762);
+	static void Init(string title = "Game", int x = 0, int y = 0, int w = 768, int h = 896);
 
 	/// <summary>
 	/// A static getter function to return a ptr.

@@ -11,6 +11,7 @@ void PlayerFactory::CreateEntity(EntityManager * EManager, SDL_Texture * Texture
 	player.addComponent<ColliderComponent>();
 	player.addComponent<WeaponComponent>(8, 0.2f, 1.0f);
 	player.addComponent<StatComponent>(0, 100, 40);
+	player.addComponent<HUDComponent>(m_assets->getTexture("HUD"), m_assets->getTexture("Health"));
 	player.addGroup(Groups::PlayerGroup);
 }
 

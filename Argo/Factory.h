@@ -1,5 +1,6 @@
 #pragma once
 #include <iostream>
+#include <AssetHandler.h>
 #include "Components.h"
 
 /// <class>Factory</class>
@@ -21,12 +22,16 @@ public:
 
 protected:
 	Factory() {};
+	AssetHandler * m_assets;
 };
 
 class PlayerFactory : public Factory
 {
 public:
-	PlayerFactory() {};
+	PlayerFactory() 
+	{
+		m_assets = AssetHandler::Instance();
+	};
 	void CreateEntity(EntityManager * EManager, SDL_Texture * Texture = nullptr, float x = 64, float y = 64, float w = 32, float h = 32) override;
 };
 

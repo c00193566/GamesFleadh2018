@@ -9,3 +9,4 @@
 #include "BulletComponent.h"
 #include "AIComponent.h"
 #include "StatComponet.h"
+#include "HUDComponent.h"

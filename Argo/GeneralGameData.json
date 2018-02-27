@@ -4,6 +4,14 @@
       "font_file": "",
 					"sprites": [
 						{
+							"name": "HUD",
+							"file": "Assets/HUD/Display.png"
+						},
+						{
+							"name": "Health",
+							"file": "Assets/HUD/Health.png"
+						},
+						{
 							"name": "VerticalDoor",
 							"file": "Assets/Tiles/VerticalDoor.png"
 						},
