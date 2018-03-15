@@ -169,7 +169,9 @@
     <ClCompile Include="RenderSystem.cpp" />
     <ClCompile Include="SceneManager.cpp" />
     <ClCompile Include="Level1.cpp" />
+    <ClCompile Include="Text.cpp" />
     <ClCompile Include="Vector2D.cpp" />
+    <ClCompile Include="WaveSystem.cpp" />
     <ClCompile Include="WeaponComponent.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -199,6 +201,7 @@
     <ClInclude Include="StatComponet.h" />
     <ClInclude Include="stdafx.h" />
     <ClInclude Include="Level1.h" />
+    <ClInclude Include="Text.h" />
     <ClInclude Include="TransformComponent.h" />
     <ClInclude Include="Vector2D.h" />
     <ClInclude Include="WaveSystem.h" />

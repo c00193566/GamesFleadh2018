@@ -38,6 +38,10 @@ public:
 	//sound file names
 	static std::map<std::string, std::string> m_sounds;
 
+	//font file names and size
+	static std::map<std::string, std::string>m_fonts;
+	static std::map<std::string, int>m_fontsize;
+
 	//level data
 	static std::vector<Wave> m_waveLayout;
 	static std::vector<std::vector<std::vector<int>>> m_roomLayout;

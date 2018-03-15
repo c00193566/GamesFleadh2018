@@ -34,6 +34,11 @@ void InputSystem::KeyPressed(SDL_Event e, vector<Entity*> &entity)
 			{
 				right = true;
 			}
+
+			if (e.key.keysym.sym == ent->getComponent<KeyComponent>().Reload())
+			{
+				reload = true;
+			}
 		}
 	}
 }
@@ -64,6 +69,11 @@ void InputSystem::KeyReleased(SDL_Event e, vector<Entity*> &entity)
 			if (e.key.keysym.sym == ent->getComponent<KeyComponent>().Right())
 			{
 				right = false;
+			}
+
+			if (e.key.keysym.sym == ent->getComponent<KeyComponent>().Reload())
+			{
+				reload = false;
 			}
 		}
 	}
@@ -121,6 +131,11 @@ void InputSystem::Update(EntityManager * Manager, vector<Entity*> &entity, Playe
 		if (right)
 		{
 			ent->getComponent<CommandComponent>().getCommand("Right")->Execute(&ent->getComponent<TransformComponent>());
+		}
+
+		if (reload)
+		{
+			ent->getComponent<CommandComponent>().getCommand("Reload")->Execute(&ent->getComponent<WeaponComponent>());
 		}
 
 		// Rotation

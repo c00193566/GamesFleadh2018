@@ -4,6 +4,8 @@
 std::map<std::string, std::string> GameData::m_sounds;
 std::vector<std::vector<std::vector<int>>> GameData::m_roomLayout;
 std::map<std::string, std::string> GameData::m_sprites;
+std::map<std::string, std::string> GameData::m_fonts;
+std::map<std::string, int> GameData::m_fontsize;
 std::vector<GameData::Wave> GameData::m_waveLayout;
 std::string GameData::fontFile;
 	
@@ -87,6 +89,7 @@ void LevelLoader::LoadAll()
 {
 	loadRoomData();
 	loadSounds();
+	loadFonts();
 	loadSpriteNames();
 	loadWaveData();
 }
@@ -106,6 +109,33 @@ void LevelLoader::loadSounds()
 				wStringToString(object[L"name"]->AsString()),
 				wStringToString(object[L"file"]->AsString())));
 		}
+
+}
+
+void LevelLoader::loadFonts()
+{
+	// clear data
+	m_gameData.m_fonts.clear();
+	m_gameData.m_fontsize.clear();
+
+	// Retrieve root object.
+	JSONObject root = getTopLevelJSONObject();
+
+	JSONObject Data = root[L"general_game_data"]->AsObject();
+	JSONArray fontArray = Data[L"fonts"]->AsArray();
+
+	for (unsigned int i = 0; i < fontArray.size(); i++)
+	{
+		JSONObject object = fontArray[i]->AsObject();
+
+		GameData::m_fonts.insert(std::pair<std::string, std::string>(
+			wStringToString(object[L"name"]->AsString()),
+			wStringToString(object[L"file"]->AsString())));
+
+		GameData::m_fontsize.insert(std::pair<std::string, int>(
+			wStringToString(object[L"name"]->AsString()),
+			object[L"size"]->AsNumber()));
+	}
 
 }
 

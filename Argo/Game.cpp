@@ -23,6 +23,11 @@ Game::Game() :
 	m_levelloader(string("GeneralGameData.json"))
 {
 	SDL_Init(SDL_INIT_EVERYTHING);
+
+	if (TTF_Init() < 0)
+	{
+		cout << "Failed to initialise TTF : " << TTF_GetError() << endl;
+	}
 }
 
 Game::~Game()
@@ -47,6 +52,14 @@ void Game::Init()
 	for (map<string, string>::iterator iter = GameData::m_sprites.begin(); iter != GameData::m_sprites.end(); iter++)
 	{
 		m_assets->addTexture(iter->first, iter->second, RenderSystem::Renderer());
+	}
+
+	TTF_Font * font;
+
+	// Load in fonts
+	for (map<string, string>::iterator iter = GameData::m_fonts.begin(); iter != GameData::m_fonts.end(); iter++)
+	{
+		m_assets->addFont(iter->first, iter->second, GameData::m_fontsize.at(iter->first));
 	}
 
 	// Create scene manager

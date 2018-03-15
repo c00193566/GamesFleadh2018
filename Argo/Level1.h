@@ -10,6 +10,7 @@
 #include "MovementSystem.h"
 #include "Collision.h"
 #include "AISystem.h"
+#include "WaveSystem.h"
 
 class Level1 : public Scene
 {
@@ -25,6 +26,9 @@ private:
 
 	// AI system
 	AISystem * m_aisystem;
+
+	// Wave system
+	WaveSystem * m_wavesystem;
 
 	// Factories
 	Factory * m_playerFactory;

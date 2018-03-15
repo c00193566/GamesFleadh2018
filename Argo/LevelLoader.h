@@ -54,6 +54,7 @@ private:
 
 	void loadRoomData();
 	void loadSounds();
+	void loadFonts();
 	void loadSpriteNames();
 	void loadWaveData();
 	void loadTextFont();

@@ -22,6 +22,7 @@ private:
 	bool left; 
 	bool right;
 	bool fire;
+	bool reload;
 	int MouseX;
 	int MouseY;
 	AssetHandler * m_asset;

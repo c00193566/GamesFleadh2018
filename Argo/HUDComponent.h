@@ -2,11 +2,13 @@
 #include <iostream>
 #include <SDL.h>
 #include <SDL_image.h>
+#include <string>
 #include "ECS.h"
 #include "RenderSystem.h"
 #include "Vector2D.h"
 #include "WeaponComponent.h"
 #include "StatComponet.h"
+#include "Text.h"
 
 /// <class>HUDComponent</class>
 /// <summary>
@@ -39,6 +41,11 @@ private:
 	WeaponComponent * m_weapon;
 	StatComponent * m_stats;
 
+	Text * m_clipText;
+	string m_clipSize;
+
+	Text * m_waveText;
+
 public:
 	/// <summary>
 	/// Default constructor with overload parameter
@@ -57,6 +64,10 @@ public:
 		HealthBar->m_width = 374.0f;
 		HealthBar->m_maxwidth = 374.0f;
 		HealthBar->m_scale = 1.0f;
+
+		m_clipText = nullptr;
+
+		m_waveText = new Text("1", SDL_Rect{ 62, 804, 0, 0 });
 	}
 
 	/// <summary>
@@ -69,6 +80,10 @@ public:
 
 		// Health Bar
 		HealthBar->m_current = m_stats->getHealth();
+
+		// Text
+		m_clipSize = to_string(m_weapon->getClip());
+		m_clipText = new Text(m_clipSize, SDL_Rect{ 670, 804, 0, 0 });
 	}
 
 	/// <summary>
@@ -84,6 +99,9 @@ public:
 			HealthBar->m_dst.w = HealthBar->m_width;
 			HealthBar->m_current = m_stats->getHealth();
 		}
+
+		m_clipSize = to_string(m_weapon->getClip());
+		m_clipText->setText(m_clipSize);
 	}
 
 	/// <summary>
@@ -94,5 +112,12 @@ public:
 	{
 		RenderSystem::Draw(m_texture, m_src, m_dst);
 		RenderSystem::Draw(HealthBar->m_texture, HealthBar->m_src, HealthBar->m_dst);
+		m_clipText->Draw();
+		m_waveText->Draw();
 	}
+
+	void setWaveText(int wave) 
+	{ 
+		m_waveText->setText(to_string(wave));
+	};
 };

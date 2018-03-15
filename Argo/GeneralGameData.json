@@ -1,89 +1,95 @@
 {
-  "general_game_data": {
-    "global_variables": {
-      "font_file": "",
-					"sprites": [
-						{
-							"name": "HUD",
-							"file": "Assets/HUD/Display.png"
-						},
-						{
-							"name": "Health",
-							"file": "Assets/HUD/Health.png"
-						},
-						{
-							"name": "VerticalDoor",
-							"file": "Assets/Tiles/VerticalDoor.png"
-						},
-						{
-							"name": "HorizontalDoor",
-							"file": "Assets/Tiles/HorizontalDoor.png"
-						},
-						{
-							"name": "TopLeftWall",
-							"file": "Assets/Tiles/TopLeft.png"
-						},
-						{
-							"name": "BottomLeftWall",
-							"file": "Assets/Tiles/BottomLeft.png"
-						},
-						{
-							"name": "TopRightWall",
-							"file": "Assets/Tiles/TopRight.png"
-						},
-						{
-							"name": "BottomRightWall",
-							"file": "Assets/Tiles/BottomRight.png"
-						},
-						{
-							"name": "VerticalWall",
-							"file": "Assets/Tiles/Vertical.png"
-						},
-						{
-							"name": "HorizontalWall",
-							"file": "Assets/Tiles/Horizontal.png"
-						},
-						{
-							"name": "BasicFloor",
-							"file": "Assets/Tiles/BasicFloor.png"
-						},
-						{
-							"name": "CrossSection",
-							"file": "Assets/Tiles/CrossSection.png"
-						},
-						{
-							"name": "MG",
-							"file": "Assets/Players/MachineGun.png"
-						},
-						{
-							"name": "HM",
-							"file": "Assets/Players/Hitman.png"
-						},
-						{
-							"name": "RedBullet",
-							"file": "Assets/Bullets/Red.png"
-						},
-						{
-							"name": "Zombie",
-							"file": "Assets/Enemies/Zombie.png"
-						}
-					]
-    },
-    "sfx": [ 
-      {
-        "name": "sound",
-        "file": "placeholder.wav"
-      },
-      {
-        "name": "button",
-        "file": "placeholder.wav"
-      },
-      {
-        "name": "button2",
-        "file": "placeholder.wav"
-      }
-    ]
-  },
+	"general_game_data": {
+		"global_variables": {
+			"sprites": [
+				{
+					"name": "HUD",
+					"file": "Assets/HUD/Display.png"
+				},
+				{
+					"name": "Health",
+					"file": "Assets/HUD/Health.png"
+				},
+				{
+					"name": "VerticalDoor",
+					"file": "Assets/Tiles/VerticalDoor.png"
+				},
+				{
+					"name": "HorizontalDoor",
+					"file": "Assets/Tiles/HorizontalDoor.png"
+				},
+				{
+					"name": "TopLeftWall",
+					"file": "Assets/Tiles/TopLeft.png"
+				},
+				{
+					"name": "BottomLeftWall",
+					"file": "Assets/Tiles/BottomLeft.png"
+				},
+				{
+					"name": "TopRightWall",
+					"file": "Assets/Tiles/TopRight.png"
+				},
+				{
+					"name": "BottomRightWall",
+					"file": "Assets/Tiles/BottomRight.png"
+				},
+				{
+					"name": "VerticalWall",
+					"file": "Assets/Tiles/Vertical.png"
+				},
+				{
+					"name": "HorizontalWall",
+					"file": "Assets/Tiles/Horizontal.png"
+				},
+				{
+					"name": "BasicFloor",
+					"file": "Assets/Tiles/BasicFloor.png"
+				},
+				{
+					"name": "CrossSection",
+					"file": "Assets/Tiles/CrossSection.png"
+				},
+				{
+					"name": "MG",
+					"file": "Assets/Players/MachineGun.png"
+				},
+				{
+					"name": "HM",
+					"file": "Assets/Players/Hitman.png"
+				},
+				{
+					"name": "RedBullet",
+					"file": "Assets/Bullets/Red.png"
+				},
+				{
+					"name": "Zombie",
+					"file": "Assets/Enemies/Zombie.png"
+				}
+			]
+		},
+		"sfx": [
+			{
+				"name": "sound",
+				"file": "placeholder.wav"
+			},
+			{
+				"name": "button",
+				"file": "placeholder.wav"
+			},
+			{
+				"name": "button2",
+				"file": "placeholder.wav"
+			}
+		],
+		"fonts": [
+			{
+				"name": "Arial",
+				"size": 64,
+				"file": "Assets/Text/arial.ttf"
+			}
+		]
+	},
   "wave_layouts": [
     {
       "dog": 1,

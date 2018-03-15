@@ -12,6 +12,7 @@ void CommandComponent::Init()
 	m_commands["Up"] = new MoveUp;
 	m_commands["Down"] = new MoveDown;
 	m_commands["Fire"] = new Fire;
+	m_commands["Reload"] = new Reload;
 }
 
 Command * CommandComponent::getCommand(string Tag)
@@ -72,4 +73,11 @@ void Fire::Execute(TransformComponent * T, PlayerBulletFactory * F, SDL_Texture 
 	pos.x += T->width / 2;
 	pos.y += T->height / 2;
 	F->CreateEntity(Manager, Texture, pos.x, pos.y, 5, 10, T->rotation);
+}
+
+//////////////////////////////////////////////////////////////
+
+void Reload::Execute(WeaponComponent * W)
+{
+	W->setReload(true);
 }

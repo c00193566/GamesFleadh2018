@@ -42,6 +42,11 @@ void RenderSystem::Clear()
 	SDL_RenderClear(m_renderer);
 }
 
+void RenderSystem::Draw(SDL_Texture * Texture, SDL_Rect DstRect)
+{
+	SDL_RenderCopy(m_renderer, Texture, NULL, &DstRect);
+}
+
 void RenderSystem::Draw(SDL_Texture * Texture, SDL_Rect SrcRect, SDL_Rect DstRect)
 {
 	SDL_RenderCopy(m_renderer, Texture, &SrcRect, &DstRect);

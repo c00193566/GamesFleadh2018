@@ -50,7 +50,7 @@ AISystem::AISystem(int Level)
 	m_pathfinder->AddLinks();
 
 	m_timer = 0.0f;
-	m_startTime = 12.0f;
+	m_startTime = 0.0f;
 }
 
 void AISystem::Update(vector<Entity*> AI, vector<Entity*> Targets)

@@ -1,0 +1,10 @@
+﻿     Creating library C:\Users\Jack\Desktop\Personal\Projects\Argo\Debug\Argo.lib and object C:\Users\Jack\Desktop\Personal\Projects\Argo\Debug\Argo.exp
+MSVCRTD.lib(exe_main.obj) : error LNK2019: unresolved external symbol _main referenced in function "int __cdecl invoke_main(void)" (?invoke_main@@YAHXZ)
+C:\Users\Jack\Desktop\Personal\Projects\Argo\\ExternalLibraries\SDL2-2.0.7\lib\x64\SDL2.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\Jack\Desktop\Personal\Projects\Argo\\ExternalLibraries\SDL2-2.0.7\lib\x64\SDL2main.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\Jack\Desktop\Personal\Projects\Argo\\ExternalLibraries\SDL2-2.0.7\lib\x64\SDL2_image.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\Jack\Desktop\Personal\Projects\Argo\\ExternalLibraries\SDL2-2.0.7\lib\x64\SDL2_ttf.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\Jack\Desktop\Personal\Projects\Argo\\ExternalLibraries\SDL2-2.0.7\lib\x64\SDL2_net.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\Jack\Desktop\Personal\Projects\Argo\\ExternalLibraries\SDL2-2.0.7\lib\x64\SDL2_mixer.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\Jack\Desktop\Personal\Projects\Argo\\ExternalLibraries\TextureHandlerLibrary\lib\TextureHandler.lib : warning LNK4272: library machine type 'x64' conflicts with target machine type 'x86'
+C:\Users\Jack\Desktop\Personal\Projects\Argo\Debug\Argo.exe : fatal error LNK1120: 1 unresolved externals

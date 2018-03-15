@@ -27,13 +27,17 @@ void Level1::Initialise()
 	// Create AI system
 	m_aisystem = new AISystem;
 
+	// Create Wave system
+	m_wavesystem = new WaveSystem;
+
 	// Load Level
 	LoadLevel();
 
+	// Load in Spawn positions
+	m_wavesystem->SpawnPointSetup(m_entManager->getGroup(Groups::DoorGroup));
+
 	// Create Player
 	m_playerFactory->CreateEntity(m_entManager, m_assets->getTexture("HM"), 336, 336);
-	m_aiFactory->CreateEntity(m_entManager, m_assets->getTexture("Zombie"), 80, 80);
-	m_aiFactory->CreateEntity(m_entManager, m_assets->getTexture("Zombie"), 400, 80);
 }
 
 void Level1::LoadLevel()
@@ -127,6 +131,9 @@ void Level1::Update()
 	// Update ai system
 	m_aisystem->Update(m_entManager->getGroup(Groups::EnemyGroup), m_entManager->getGroup(Groups::PlayerGroup));
 
+	// Update wave system
+	m_wavesystem->Update(m_entManager->getGroup(Groups::EnemyGroup), m_aiFactory, m_entManager);
+
 	// Update MovementSystem
 	MovementSystem::ControlledMovement(m_entManager->getGroup(Groups::PlayerGroup));
 	MovementSystem::ControlledMovement(m_entManager->getGroup(Groups::EnemyGroup));
@@ -144,6 +151,15 @@ void Level1::Update()
 
 	// Refresh entity manager
 	m_entManager->Refresh();
+
+	for (Entity * player : m_entManager->getGroup(Groups::PlayerGroup))
+	{
+		if (player->hasComponent<HUDComponent>())
+		{
+			player->getComponent<HUDComponent>().setWaveText(
+				m_wavesystem->getWave());
+		}
+	}
 
 	// Restart level
 	if (m_entManager->getGroup(Groups::PlayerGroup).size() <= 0)

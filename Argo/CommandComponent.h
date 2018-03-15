@@ -4,6 +4,7 @@
 #include "ECS.h"
 #include "TransformComponent.h"
 #include "Factory.h"
+#include "WeaponComponent.h"
 
 ///<class>CommandComponent</class>
 /// <summary>
@@ -22,6 +23,7 @@ class Command
 public:
 	virtual ~Command() {};
 	virtual void Execute(TransformComponent * T) {};
+	virtual void Execute(WeaponComponent * W) {};
 
 protected:
 	Command() {};
@@ -80,4 +82,10 @@ class Fire : public Command
 {
 public:
 	void Execute(TransformComponent * T, PlayerBulletFactory * F, SDL_Texture * Texture, EntityManager * Manager);
+};
+
+class Reload : public Command
+{
+public:
+	void Execute(WeaponComponent * W);
 };
